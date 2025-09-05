@@ -1,0 +1,211 @@
+// AboutMe.module.scss - About Section Component
+
+.aboutSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23ffffff" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(2rem, 8vw, 8rem);
+  align-items: center;
+  
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+}
+
+.aboutImage {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #111;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 50%, transparent 70%);
+    z-index: 2;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.1);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  &:hover img {
+    filter: grayscale(70%) contrast(1.2);
+    transform: scale(1.02);
+  }
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  padding: 2rem 1.5rem 1.5rem;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat {
+  text-align: center;
+  
+  .statNumber {
+    display: block;
+    font-size: 1.25rem;
+    font-family: 'TT Firs Neue', sans-serif;
+    font-weight: 300;
+    font-family: 'TT Firs Neue', monospace;
+    letter-spacing: -0.02em;
+  }
+  
+  .statLabel {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.25rem;
+    font-family: 'TT Firs Neue', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.aboutContent {
+  h2 {
+    font-family: 'TT Firs Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-family: 'TT Firs Neue', sans-serif;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+    color: #fff;
+  }
+  
+  h3 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #888;
+    margin-bottom: 3rem;
+    font-family: 'TT Firs Neue', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  
+  p {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+    font-family: 'TT Firs Neue', sans-serif;
+    font-weight: 300;
+  }
+}
+
+.qualifications {
+  margin: 3rem 0;
+  
+  .qualification {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'TT Firs Neue', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    
+    svg {
+      color: #fff;
+      opacity: 0.6;
+    }
+  }
+}
+
+.contactButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+// Button Styles
+.primaryButton, .secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 2px;
+  font-weight: 300;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  border: none;
+  
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.primaryButton {
+  background: #fff;
+  color: #000;
+  
+  &:hover {
+    background: #f0f0f0;
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #333;
+  
+  &:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
+}

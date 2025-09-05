@@ -1,0 +1,488 @@
+.kontakt {
+  min-height: 100vh;
+  background: #000000;
+  padding: 2rem 0;
+
+  // Hero Section
+  .hero {
+    background: #000000;
+    padding: 4rem 2rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.02) 100%);
+    }
+
+    .heroContent {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+
+      .titleBox {
+        color: #ffffff;
+        font-family: 'TT Firs Neue', sans-serif;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 1.5em 2em;
+        margin: 2em 0 0;
+        border: solid 1px rgba(255, 255, 255, 0.2);
+        position: relative;
+        text-shadow: 0px 1px 2px #000;
+        max-width: 900px;
+        margin: 2em auto 0;
+
+        .cornerTopLeft {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-right: solid 1px #fff;
+          border-bottom: solid 1px #fff;
+          left: -16px;
+          top: -16px;
+        }
+
+        .cornerTopRight {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-left: solid 1px #fff;
+          border-bottom: solid 1px #fff;
+          right: -16px;
+          top: -16px;
+        }
+
+        .cornerBottomLeft {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-right: solid 1px #fff;
+          border-top: solid 1px #fff;
+          left: -16px;
+          bottom: -16px;
+        }
+
+        .cornerBottomRight {
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          border-left: solid 1px #fff;
+          border-top: solid 1px #fff;
+          right: -16px;
+          bottom: -16px;
+        }
+
+        .title {
+          font-weight: 800;
+          font-size: clamp(2rem, 4vw, 3rem);
+          letter-spacing: 0.02em;
+          margin: 0 0 0.5em 0;
+          color: #ffffff;
+        }
+
+        .subtitle {
+          font-weight: 400;
+          font-size: clamp(0.9rem, 2vw, 1.1rem);
+          letter-spacing: 0.02em;
+          margin: 0;
+          color: #ffffff;
+          line-height: 1.4;
+          text-transform: none;
+        }
+      }
+
+      .heroLine {
+        width: 60px;
+        height: 2px;
+        background: #ffffff;
+        margin: 3rem auto 0;
+      }
+    }
+  }
+
+  // Container
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    @media (max-width: 768px) {
+      padding: 0 1rem;
+    }
+  }
+
+  // Contact Section
+  .contactSection {
+    padding: 6rem 0;
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 6rem;
+      align-items: start;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+    }
+  }
+
+  // Contact Info
+  .contactInfo {
+    display: grid;
+    gap: 2rem;
+
+    .infoCard {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 2rem;
+      background: #0a0a0a;
+      border-radius: 1rem;
+      box-shadow: 
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+      border: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: 
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(255, 255, 255, 0.1);
+      }
+
+      .infoIcon {
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .infoContent {
+        h3 {
+          font-size: 1rem;
+          font-family: 'TT Firs Neue', sans-serif;
+          font-weight: 400;
+          color: #ffffff;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          color: #888888;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          font-family: 'TT Firs Neue', sans-serif;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+  // Form Section
+  .formSection {
+    background: #0a0a0a;
+    border-radius: 1rem;
+    padding: 3rem;
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.05);
+    border: none;
+
+    @media (max-width: 768px) {
+      padding: 2rem 1.5rem;
+    }
+
+    .formHeader {
+      margin-bottom: 2.5rem;
+      text-align: center;
+
+      h2 {
+        font-size: 2rem;
+        font-family: 'TT Firs Neue', sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        color: #888888;
+        font-size: 1rem;
+        font-family: 'TT Firs Neue', sans-serif;
+        font-weight: 300;
+      }
+    }
+  }
+
+  // Contact Form
+  .contactForm {
+    .formGrid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .inputGroup {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.875rem;
+        font-family: 'TT Firs Neue', sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+        margin-bottom: 0.5rem;
+
+        svg {
+          width: 18px;
+          height: 18px;
+          color: #888888;
+        }
+      }
+
+      input,
+      select,
+      textarea {
+        padding: 0.875rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        color: #ffffff;
+        background: #1a1a1a;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: 'TT Firs Neue', sans-serif;
+        font-weight: 300;
+
+        &:focus {
+          outline: none;
+          border-color: rgba(255, 255, 255, 0.3);
+          box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+
+        &:hover {
+          border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        &::placeholder {
+          color: #888888;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+        font-family: inherit;
+      }
+
+      select {
+        cursor: pointer;
+      }
+    }
+
+    .submitButton {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 1rem 2rem;
+      background: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-family: 'TT Firs Neue', sans-serif;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-top: 1rem;
+
+      &:hover:not(:disabled) {
+        background: #f0f0f0;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      &:active:not(:disabled) {
+        transform: translateY(0);
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      .spinner {
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgba(0, 0, 0, 0.3);
+        border-top: 2px solid #000000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  // Services Section
+  .servicesSection {
+    background: #000000;
+    padding: 6rem 0;
+
+    .container {
+      h2 {
+        font-size: 2.5rem;
+        font-family: 'TT Firs Neue', sans-serif;
+        font-weight: 400;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 4rem;
+        letter-spacing: -0.02em;
+      }
+    }
+
+    .servicesGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+
+      .serviceCard {
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        background: #0a0a0a;
+        border-radius: 1rem;
+        border: none;
+        box-shadow: 
+          0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -2px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 8px 10px -6px rgba(0, 0, 0, 0.1),
+            0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+
+        h3 {
+          font-size: 1.25rem;
+          font-family: 'TT Firs Neue', sans-serif;
+          font-weight: 400;
+          color: #ffffff;
+          margin-bottom: 1rem;
+          letter-spacing: -0.01em;
+        }
+
+        p {
+          color: #888888;
+          line-height: 1.6;
+          font-size: 0.875rem;
+          font-family: 'TT Firs Neue', sans-serif;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+
+
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .hero {
+      padding: 2rem 1rem 1rem;
+    }
+
+    .contactSection {
+      padding: 4rem 0;
+    }
+
+    .contactInfo {
+      gap: 1.5rem;
+
+      .infoCard {
+        padding: 1.5rem;
+        gap: 1rem;
+
+        .infoIcon {
+          width: 40px;
+          height: 40px;
+
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+
+    .formSection {
+      .formHeader {
+        margin-bottom: 2rem;
+
+        h2 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .servicesSection {
+      padding: 4rem 0;
+
+      .container h2 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .servicesGrid {
+        gap: 1.5rem;
+
+        .serviceCard {
+          padding: 2rem 1rem;
+        }
+      }
+    }
+  }
+}

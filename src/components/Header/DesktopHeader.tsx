@@ -38,19 +38,19 @@ const DesktopHeader: React.FC = () => {
         <Link to="/" className={styles.logo}>
           <img 
             src="/assets/img/Logo_Black.png" 
-            alt="PetalStack Logo" 
+            alt="Lina Sawatzki Logo" 
             className={styles.logoLight}
             width={32}
             height={32}
           />
           <img 
             src="/assets/img/Logo_White.png" 
-            alt="PetalStack Logo" 
+            alt="Lina Sawatzki Logo" 
             className={styles.logoDark}
             width={32}
             height={32}
           />
-          <span>PetalStack</span>
+          <span>Lina Sawatzki</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -62,22 +62,28 @@ const DesktopHeader: React.FC = () => {
             Home
           </Link>
           <Link 
-            to="/page-1" 
-            className={`${styles.navLink} ${isActive('/page-1') ? styles.active : ''}`}
+            to="/about-me" 
+            className={`${styles.navLink} ${isActive('/about-me') ? styles.active : ''}`}
           >
-            Page 1
+            Über mich
           </Link>
           <Link 
-            to="/page-2" 
-            className={`${styles.navLink} ${isActive('/page-2') ? styles.active : ''}`}
+            to="/projects" 
+            className={`${styles.navLink} ${isActive('/projects') ? styles.active : ''}`}
           >
-            Page 2
+            Projekte
           </Link>
           <Link 
-            to="/page-3" 
-            className={`${styles.navLink} ${isActive('/page-3') ? styles.active : ''}`}
+            to="/freie-arbeiten" 
+            className={`${styles.navLink} ${isActive('/freie-arbeiten') ? styles.active : ''}`}
           >
-            Page 3
+            Freie Arbeiten
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`${styles.navLink} ${isActive('/contact') ? styles.active : ''}`}
+          >
+            Kontakt
           </Link>
         </nav>
 
@@ -111,22 +117,28 @@ const DesktopHeader: React.FC = () => {
                 Home
               </Link>
               <Link 
-                to="/page-1" 
-                className={`${styles.mobileNavLink} ${isActive('/page-1') ? styles.active : ''}`}
+                to="/about-me" 
+                className={`${styles.mobileNavLink} ${isActive('/about-me') ? styles.active : ''}`}
               >
-                Page 1
+                Über mich
               </Link>
               <Link 
-                to="/page-2" 
-                className={`${styles.mobileNavLink} ${isActive('/page-2') ? styles.active : ''}`}
+                to="/projects" 
+                className={`${styles.mobileNavLink} ${isActive('/projects') ? styles.active : ''}`}
               >
-                Page 2
+                Projekte
               </Link>
               <Link 
-                to="/page-3" 
-                className={`${styles.mobileNavLink} ${isActive('/page-3') ? styles.active : ''}`}
+                to="/freie-arbeiten" 
+                className={`${styles.mobileNavLink} ${isActive('/freie-arbeiten') ? styles.active : ''}`}
               >
-                Page 3
+                Freie Arbeiten
+              </Link>
+              <Link 
+                to="/contact" 
+                className={`${styles.mobileNavLink} ${isActive('/contact') ? styles.active : ''}`}
+              >
+                Kontakt
               </Link>
             </div>
 

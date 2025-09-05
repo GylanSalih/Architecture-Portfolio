@@ -1,0 +1,152 @@
+.videoReveal {
+  width: 100%;
+  height: 100vh; // Extra Höhe für den Scroll-Effekt
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  
+  .videoContainer {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    
+    .videoWrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      transform-origin: center;
+      transition: all 0.1s ease-out;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      
+      .video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        z-index: 1;
+      }
+      
+      .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+        max-width: 600px;
+        padding: 0 2rem;
+  }
+}
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Dark Mode Unterstützung
+[data-theme="dark"] .videoReveal {
+  background: #000;
+  
+  .videoContainer .videoWrapper .overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.6) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .videoReveal {
+    height: 120vh;
+    
+    .videoContainer {
+      height: 100vh;
+      
+      .videoWrapper {
+        margin: 0 1rem;
+        
+        .content {
+          padding: 0 1rem;
+          
+          .title {
+            font-size: clamp(1.5rem, 8vw, 2.5rem);
+          }
+          
+          .subtitle {
+            font-size: clamp(0.875rem, 4vw, 1.125rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .videoReveal {
+    height: 100vh;
+    
+    .videoContainer {
+      height: 50vh;
+      
+      .videoWrapper {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}
+
+// Performance-Optimierungen
+.videoWrapper {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.video {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+// Hover-Effekte für Desktop
+@media (hover: hover) {
+  .videoWrapper:hover {
+    .overlay {
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    
+    .content {
+      .title {
+        transform: translate(-50%, -50%) scale(1.05);
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+}

@@ -1,13 +1,15 @@
 // App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { DesktopHeader } from './components/Header/DesktopHeader';
 import Footer from './components/Footer/Footer';
 import { Moon, Sun } from 'lucide-react';
 import Home from './Pages/Home/Home';
-import PageOne from './Pages/PageOne/PageOne';
-import PageTwo from './Pages/PageTwo/PageTwo';
-import PageThree from './Pages/PageThree/PageThree';
+import AboutMe from './Pages/AboutMe/AboutMe';
+import Contact from './Pages/Contact/Contact';
+import Projects from './Pages/Projects/Projects';
+import ProjectSingle from './Pages/ProjectSingle/ProjectSingle';
+import FreieArbeiten from './Pages/FreieArbeiten/FreieArbeiten';
 import styles from './App.module.scss';
 
 import './fonts/fonts.css';
@@ -32,9 +34,15 @@ const AppContent: React.FC = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/page-1" element={<PageOne />} />
-          <Route path="/page-2" element={<PageTwo />} />
-          <Route path="/page-3" element={<PageThree />} />
+          <Route path="/about-me" element={<AboutMe />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectSingle />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/freie-arbeiten" element={<FreieArbeiten />} />
+
+          
+          {/* Catch-all redirect */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 
         <Footer />

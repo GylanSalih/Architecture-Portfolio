@@ -4,46 +4,42 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import styles from './Hero.module.scss';
 
 const Hero: React.FC = () => {
-  const displayCode = `import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-
-const ModernApp: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState<ApiData[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await api.getData();
-        setData(response.data);
-      } catch (error) {
-        console.error('Failed to fetch:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const displayCode = `// Design Projekt - Portfolio Website
+const PortfolioProject: React.FC = () => {
+  const skills = [
+    'React & TypeScript',
+    'UI/UX Design', 
+    'Responsive Design',
+    'SCSS/CSS',
+    'JavaScript',
+    'Figma',
+    'Adobe Creative Suite',
+    'Git & GitHub'
+  ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="app-container"
-    >
-      {isLoading ? (
-        <LoadingSpinner />
-      ) : (
-        <DataGrid data={data} />
-      )}
-    </motion.div>
+    <div className="portfolio-container">
+      <h1>Willkommen in meiner
+        kreativen Welt</h1>
+      
+      <p>Ich erstelle benutzerfreundliche
+        Designs und entwickle moderne
+        Web-Anwendungen.</p>
+        
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <span key={index} className="skill-tag">
+            {skill}
+          </span>
+        ))}
+      </div>
+      
+      <button className="cta-button">
+        Projekte ansehen
+      </button>
+    </div>
   );
-};
-
-export default ModernApp;`;
+};`;
 
   const highlightSyntax = (code: string) => {
     return code
@@ -70,27 +66,27 @@ export default ModernApp;`;
       <div className={styles.heroContent}>
         <div className={styles.heroBadge}>
           <Sparkles size={16} />
-          <span>Modern React TypeScript Boilerplate</span>
+          <span>Design & Entwicklung</span>
         </div>
         
         <h1 className={styles.heroTitle}>
-          Build Beautiful Apps
-          <span className={styles.gradientText}> Faster</span>
+          Hallo, ich bin
+          <span className={styles.gradientText}> Lina Sawatzki</span>
         </h1>
         
         <p className={styles.heroDescription}>
-          A modern, production-ready React TypeScript boilerplate with beautiful UI/UX, 
-          smooth animations, and a comprehensive design system. Built for developers who 
-          care about code quality and user experience.
+          Ich bin eine kreative Designerin und Entwicklerin mit Leidenschaft für 
+          benutzerfreundliche Interfaces und moderne Web-Technologien. Ich verwandle 
+          Ideen in schöne, funktionale digitale Erlebnisse.
         </p>
         
         <div className={styles.ctaButtons}>
-          <Link to="/page-1" className={styles.primaryButton}>
-            Get Started
+          <Link to="/page-2" className={styles.primaryButton}>
+            Meine Projekte
             <ArrowRight size={20} />
           </Link>
-          <Link to="/page-2" className={styles.secondaryButton}>
-            View Examples
+          <Link to="/page-1" className={styles.secondaryButton}>
+            Über mich
           </Link>
         </div>
       </div>
@@ -104,27 +100,27 @@ export default ModernApp;`;
               <span className={styles.dotMaximize}></span>
             </div>
             <div className={styles.windowTitle}>
-              ModernApp.tsx — React TypeScript
+              Portfolio.tsx — Lina Sawatzki
             </div>
           </div>
           <div className={styles.editorTabs}>
             <div className={`${styles.tab} ${styles.active}`}>
-              <span className={styles.tabIcon}>⚛️</span>
-              App.tsx
+              <span className={styles.tabIcon}>🎨</span>
+              Portfolio.tsx
             </div>
             <div className={styles.tab}>
-              <span className={styles.tabIcon}>🎣</span>
-              hooks.ts
+              <span className={styles.tabIcon}>💼</span>
+              Projects.tsx
               <span className={styles.tabClose}>×</span>
             </div>
             <div className={styles.tab}>
-              <span className={styles.tabIcon}>🌐</span>
-              api.ts
+              <span className={styles.tabIcon}>👤</span>
+              About.tsx
               <span className={styles.tabClose}>×</span>
             </div>
             <div className={styles.tab}>
-              <span className={styles.tabIcon}>📋</span>
-              types.ts
+              <span className={styles.tabIcon}>📧</span>
+              Contact.tsx
               <span className={styles.tabClose}>×</span>
             </div>
           </div>

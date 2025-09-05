@@ -1,0 +1,92 @@
+/*-----------------------------------------------------------*/
+/* Fonts CSS - TT Firs Neue */
+/*-----------------------------------------------------------*/
+
+/* TT Firs Neue Font Family - Lokal eingebunden */
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('tt_firs_neue/tt-firs-neue-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('tt_firs_neue/tt-firs-neue-medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('tt_firs_neue/tt-firs-neue-bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('tt_firs_neue/tt-firs-neue-light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'TT Firs Neue';
+    src: url('tt_firs_neue/tt-firs-neue-italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Fallback Fonts */
+@font-face {
+    font-family: 'TT Firs Neue Fallback';
+    src: local('Arial'), local('Helvetica'), local('sans-serif');
+    font-weight: 300 700;
+    font-style: normal;
+}
+
+/* CSS Custom Properties für einfache Verwendung */
+:root {
+    --font-primary: 'TT Firs Neue', 'TT Firs Neue Fallback', Arial, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+}
+
+/* Utility Classes */
+.font-primary {
+    font-family: var(--font-primary);
+}
+
+.font-light {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-medium);
+}
+
+.font-bold {
+    font-family: var(--font-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.font-italic {
+    font-family: var(--font-primary);
+    font-style: italic;
+}

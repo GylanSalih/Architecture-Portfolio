@@ -1,7 +1,7 @@
 {
-  "name": "bv24-typescript",
+  "name": "lina-sawatzki-portfolio",
   "version": "1.0.0",
-  "description": "TypeScript project with full development setup",
+  "description": "Portfolio Website von Lina Sawatzki",
   "main": "dist/index.js",
   "scripts": {
     "dev": "vite",
@@ -23,6 +23,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "gsap": "^3.13.0",
     "lucide-react": "^0.536.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
